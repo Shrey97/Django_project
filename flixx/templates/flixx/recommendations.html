@@ -1,0 +1,28 @@
+{% extends 'flixx/base.html' %}
+{% block title %}
+    FLiXx | Recommendations
+{% endblock %}
+{% block navigation %}
+
+<li><a href="/FliXx/watched-movies">Movies watched</a>
+                    </li>
+
+                    <li class="active"><a href="/FliXx/recommend">Recommend</a>
+                    </li>
+                    <li ><a href="/FliXx/Xplore">Explore all movies</a>
+                    </li>
+                    <li><a href="#">Upcoming</a>
+                    </li>
+                    <li><a href="/FliXx/login">{% if user.is_authenticated %}LogOut{% else %}LogIn
+                    {% endif %}</a>
+                    </li>
+{% endblock %}
+{% block content %}
+    <div class="col-md-12">
+    <center><strong><h2></h2></strong></center>
+    <br><center><strong><h4><a href="/FliXx/recommend">Tune your recommendations .</a> </h4></strong></center>
+
+        {% for movie in li %}
+        {% include 'flixx/thumnails.html' %}
+    {% endfor %}
+{% endblock %}
